@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="#fcedc7">
+
+    <!-- Título da Tela de Cadastro -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CADASTRO DE USUÁRIO"
+        android:textSize="32sp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="#914f39"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Campo de Nome -->
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome"
+        android:minHeight="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:drawable/editbox_background" />
+
+    <!-- Campo de Email -->
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:drawable/editbox_background" />
+
+    <!-- Campo de Senha -->
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:drawable/editbox_background" />
+
+    <!-- Campo de Confirmação de Senha -->
+    <EditText
+        android:id="@+id/etConfirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirme a Senha"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:drawable/editbox_background" />
+
+    <!-- Botão de Registrar -->
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="REGISTRAR"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#f25050"
+        android:textColor="#FFFFFF" />
+</LinearLayout>

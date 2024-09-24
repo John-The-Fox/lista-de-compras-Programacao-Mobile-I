@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#fcedc7">
+
+    <!-- Título da Tela -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adicionar Item"
+        android:textSize="32sp"
+        android:textColor="#914f39"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Campo de Nome do Item -->
+    <EditText
+        android:id="@+id/etItemName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome do Item"
+        android:minHeight="48dp"
+        android:background="@drawable/rounded_corner_pastel_green"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Campo de Quantidade -->
+    <EditText
+        android:id="@+id/etItemQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Quantidade"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:background="@drawable/rounded_corner_pastel_green"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Campo de Unidade -->
+    <EditText
+        android:id="@+id/etItemUnit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Unidade (ex: kg, un)"
+        android:minHeight="48dp"
+        android:background="@drawable/rounded_corner_pastel_green"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Campo de Categoria -->
+    <EditText
+        android:id="@+id/etItemCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Categoria (ex: Fruta, Carne)"
+        android:minHeight="48dp"
+        android:background="@drawable/rounded_corner_pastel_green"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Botão para adicionar o item -->
+    <Button
+        android:id="@+id/btnSaveItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        android:backgroundTint="#f25050"
+        android:textColor="#FFFFFF"/>
+</LinearLayout>
