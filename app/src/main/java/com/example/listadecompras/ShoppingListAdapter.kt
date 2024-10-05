@@ -58,9 +58,4 @@ class ShoppingListAdapter(
         return shoppingLists.size
     }
 
-    // Método atualizado para adicionar uma nova lista de compras
-    fun addShoppingList(newShoppingList: ShoppingList) {
-        shoppingLists.add(newShoppingList)
-        notifyItemInserted(shoppingLists.size - 1)
-    }
 }

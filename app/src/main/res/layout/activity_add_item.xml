@@ -48,13 +48,11 @@
         android:background="@drawable/rounded_corner_pastel_green"
         android:layout_marginBottom="16dp"/>
 
-    <!-- Campo de Categoria -->
-    <EditText
-        android:id="@+id/etItemCategory"
+    <!-- Spinner de Categoria -->
+    <Spinner
+        android:id="@+id/spinnerCategory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Categoria (ex: Fruta, Carne)"
-        android:minHeight="48dp"
         android:background="@drawable/rounded_corner_pastel_green"
         android:layout_marginBottom="16dp"/>
 

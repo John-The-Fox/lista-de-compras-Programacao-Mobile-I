@@ -130,6 +130,7 @@ class ShoppingListActivity : AppCompatActivity() {
                         val newShoppingList = ShoppingList(newId, newListTitle, mutableListOf(), newImageUri ?: Uri.parse("android.resource://${packageName}/drawable/logo_app").toString())
 
                         originalList.add(newShoppingList)
+                        originalList.sortBy { it.title }
                         filteredList.clear()
                         filteredList.addAll(originalList)
                         shoppingListAdapter.notifyDataSetChanged()
@@ -147,8 +148,11 @@ class ShoppingListActivity : AppCompatActivity() {
                         listToEdit?.let {
                             it.title = editedListTitle
                             it.imageUri = editedImageUri ?: it.imageUri
-                            shoppingListAdapter.notifyDataSetChanged()
                         }
+                        originalList.sortBy { it.title }
+                        filteredList.clear()
+                        filteredList.addAll(originalList)
+                        shoppingListAdapter.notifyDataSetChanged()
                     }
                 }
             }

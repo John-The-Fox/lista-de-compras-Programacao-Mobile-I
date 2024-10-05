@@ -42,7 +42,7 @@
         android:layout_weight="1"
         android:baselineAlignBottom="true"
         android:scaleType="fitCenter"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@drawable/logo_app" />
 
     <!-- Botão para salvar a lista -->
     <Button

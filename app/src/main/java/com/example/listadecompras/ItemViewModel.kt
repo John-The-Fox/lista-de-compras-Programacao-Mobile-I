@@ -20,18 +20,32 @@ class ItemViewModel(private val state: SavedStateHandle) : ViewModel() {
     fun addItem(item: Item) {
         val currentItems = getItems()
         currentItems.add(item)
+        currentItems.sortBy { it.name }
         state[ITEM_LIST_KEY] = currentItems
     }
 
     fun deleteItem(index: Int) {
         val currentItems = getItems()
-        currentItems.removeAt(index)
-        state[ITEM_LIST_KEY] = currentItems
+        if (currentItems.isNotEmpty() && index in currentItems.indices) {
+            currentItems.removeAt(index)
+            state[ITEM_LIST_KEY] = currentItems
+        }
     }
 
-    fun editItem(index: Int, newItem: Item) {
+    fun updateItem(updatedItem: Item) {
         val currentItems = getItems()
-        currentItems[index] = newItem
-        state[ITEM_LIST_KEY] = currentItems
+        val index = currentItems.indexOfFirst { it.id == updatedItem.id }
+
+        if (index != -1) {
+            currentItems[index] = updatedItem
+            currentItems.sortBy { it.name }
+            state[ITEM_LIST_KEY] = currentItems
+        }
+    }
+
+    // Para garantir que IDs únicos sejam atribuídos aos itens
+    fun generateItemId(): Int {
+        val currentItems = getItems()
+        return if (currentItems.isEmpty()) 1 else currentItems.maxOf { it.id } + 1
     }
 }
