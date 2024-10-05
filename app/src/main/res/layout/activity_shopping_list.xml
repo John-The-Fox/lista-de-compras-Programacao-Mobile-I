@@ -35,6 +35,16 @@
         android:layout_weight="1"
         android:layout_marginBottom="16dp"/>
 
+    <ImageButton
+        android:id="@+id/btnEditList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_edit"
+        android:contentDescription="Editar Lista"
+        android:layout_gravity="end"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_marginEnd="8dp"/>
+
     <!-- Botão para adicionar nova lista de compras -->
     <Button
         android:id="@+id/btnAddShoppingList"

@@ -34,8 +34,13 @@ class RegisterActivity : AppCompatActivity() {
             } else if (password != confirmPassword) {
                 Toast.makeText(this, "As senhas não coincidem", Toast.LENGTH_SHORT).show()
             } else {
-                // Simulação de sucesso no registro
-                Toast.makeText(this, "Usuário registrado com sucesso!", Toast.LENGTH_SHORT).show()
+                val isRegistered = UserManager.registerUser(email, password, name)
+                if (isRegistered) {
+                    Toast.makeText(this, "Usuário registrado com sucesso", Toast.LENGTH_SHORT).show()
+                    finish() // Volta para a tela de login
+                } else {
+                    Toast.makeText(this, "Email já cadastrado", Toast.LENGTH_SHORT).show()
+                }
                 finish() // Fecha a tela de cadastro e volta para o login
             }
         }

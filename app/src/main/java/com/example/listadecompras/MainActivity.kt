@@ -21,9 +21,9 @@ class MainActivity : AppCompatActivity() {
         val loginButton = binding.btnLogin
         val registerButton = binding.btnRegister
 
-        // Simular credenciais válidas
-        val validEmail = "usuario@email.com"
-        val validPassword = "123456"
+        // credenciais válidas para teste
+        val validEmail = "adm"
+        val validPassword = "adm"
 
         // Botão de login
         loginButton.setOnClickListener {
@@ -32,16 +32,22 @@ class MainActivity : AppCompatActivity() {
 
             if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
-            } else if (email != validEmail || password != validPassword) {
-                Toast.makeText(this, "Email ou senha incorretos", Toast.LENGTH_SHORT).show()
-            } else {
-                // Simulação de login bem-sucedido
-                Toast.makeText(this, "Login bem-sucedido!", Toast.LENGTH_SHORT).show()
-
-                // Navegar para a tela principal (exemplo de navegação)
+            } else if (email == validEmail && password == validPassword) {
+                Toast.makeText(this, "Bem vindo adm", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, ShoppingListActivity::class.java)
                 startActivity(intent)
-                finish() // Finaliza a MainActivity para não voltar ao login com o botão "voltar"
+                finish()
+            } else {
+                val user = UserManager.authenticate(email, password)
+                if (user != null) {
+                    // Armazena o usuário logado em uma variável global ou no SharedPreferences
+                    val intent = Intent(this, ShoppingListActivity::class.java)// Navegar para a tela de listas
+                    intent.putExtra("USER_EMAIL", user.email)
+                    startActivity(intent)
+                    finish() // Finaliza a MainActivity para não voltar ao login com o botão "voltar"
+                } else {
+                    Toast.makeText(this, "Email ou senha inválidos", Toast.LENGTH_SHORT).show()
+                }
             }
         }
 

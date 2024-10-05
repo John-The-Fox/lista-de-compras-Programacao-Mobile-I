@@ -20,10 +20,13 @@
     <!-- Logo (simulada com ic_launcher) -->
     <ImageView
         android:id="@+id/appLogo"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:contentDescription="App Logo"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@drawable/logo_app"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"/>
 
     <!-- Texto para Acesso -->
     <TextView
