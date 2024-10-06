@@ -20,6 +20,11 @@ class ShoppingListViewModel(private val state: SavedStateHandle) : ViewModel() {
         return state[SHOPPING_LIST_KEY] ?: mutableListOf()
     }
 
+    // Função para buscar uma lista pelo ID
+    fun getShoppingListById(id: Int): ShoppingList? {
+        return getShoppingLists().find { it.id == id }
+    }
+
     // Função para adicionar uma nova lista
     fun addShoppingList(shoppingList: ShoppingList) {
         val currentList = getShoppingLists()
